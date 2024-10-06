@@ -20,6 +20,32 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Using Prisma with SQLite
+
+Steps from this link: https://www.robinwieruch.de/next-prisma-sqlite/
+
+If you want to make changes with adding/removing data manually, or you want to visualize the state of the tables, use 
+```bash
+npx prisma studio
+```
+
+Notes: alternatively can use 
+```bash 
+npx prisma migrate dev
+``` 
+instead of 
+```bash
+npx prisma db push
+``` 
+if you want to push schema changes like changing column names, which the prior does not support at this moment. 
+
+For staging/preview env and prod pushes, use 
+```bash
+npx prisma migrate deploy
+``` 
+
+More info can be found here: https://www.prisma.io/docs/orm/prisma-migrate/understanding-prisma-migrate/mental-model
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
