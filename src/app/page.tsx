@@ -1,19 +1,46 @@
-import Image from "next/image";
-import { prisma } from '@/src/lib/prisma';
-import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode } from "react";
+import React from 'react';
 
-const Home = async () => {
-  const posts = await prisma.post.findMany();
-  return (
-    <div className="p-4 flex flex-col gap-y-4">
-      <h2>Home</h2>
+const Home = () => {
 
+  import React from 'react';
+
+  const Navbar = () => {
+    return (
+      <nav className="bg-gray-800 p-4">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="text-white text-lg font-semibold">BrandName</div>
+          <ul className="flex space-x-4">
+            <li>
+              <a href="#" className="text-gray-300 hover:text-white">Home</a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-300 hover:text-white">About</a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-300 hover:text-white">Services</a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-300 hover:text-white">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    );
+  };
+  
+  export default Navbar;
+// const Home = async () => {
+//   const posts = await prisma.post.findMany();
+//   return (
+//     <div className="p-4 flex flex-col gap-y-4">
+ 
+{/* 
       <ul className="flex flex-col gap-y-2">
         {posts.map((post: { id: Key | null | undefined; name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }) => (
           <li key={post.id}>{post.name}</li>
         ))}
-      </ul>
-    </div>
+    //   </ul> */}
+    // </div>
     // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
     //   <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
     //     <Image
@@ -109,7 +136,7 @@ const Home = async () => {
     //     </a>
     //   </footer>
     // </div>
-  );
-};
+//   );
+// };
 
-export default Home;
+// export default Home;
